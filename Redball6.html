@@ -1,0 +1,92 @@
+<!Doctypehtml>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+$( document ).ready(function() {
+console.log( "ready!" );
+$("#redball").fadeOut();
+$("#redball").fadeIn();
+$("#redball").animate ({ "left": "+=200px"},"slow");
+$( "#moveright" ).click(function() {
+//$( "#redball" ).slide();
+});
+});    //One closing tag per Jquery application
+</script>
+<style>
+#tab{
+  border: 2px solid black;
+  position: absolute;
+  top: 300px;
+  Left: 200px;
+}
+#tab2{
+border: 2px solid black;
+position:top-right;
+top: 300px;
+Left: 200px;
+}
+tr td {
+  border:1px solid black;
+}
+ </style>
+</head>
+<body><img style="position: absolute; left: 140px; top: 100px;" id="redball" src="redball.jpg"><table id="tab">
+<tr>
+<td><button id="sayhello">Shawn's Button</button></td>
+<td><button id="moveright">Move Right</button></td>
+<td><button id="moveleft">Move Left</button></td>
+</tr>
+<tr>
+ <td><button id="movedown">Move Down</button></td>
+<td><button id="moveup">Move Up</button></td>
+<td><button id="movediagnolleft">Move Diagnol R</button></td>
+</tr>
+<table id="tab2">
+<tr>
+<td><button id="movediagnolright">Move Diagnol L</button></td>
+<td><button id="movedownright">Down Diagnol Left</button></td>
+<td><button id="movedownleft">Down Diagnol Right</button></td>
+</tr>
+<tr>
+<td><button id="movesquare">Move Square</button></td>
+<td><button id="movetriangle">Move Triangle</button></td>
+<td><button id="rageagainstwall">Rage Against</button></td>
+<td><button id="Octagon">Octagon</button></td> 
+<td><button id="X">X</button></td>
+</tr>
+<script>
+$("#moveleft").click(function(){
+$("#redball").animate({"left":"-=28px"},"fast");
+});
+$("#moveright").click(function(){
+$("#redball").animate({"left":"+=28px"},"fast");
+});
+$("#moveup").click(function(){
+$("#redball").animate({"top":"-=28px"},"fast");
+});
+$("#movedown").click(function(){
+$("#redball").animate({"top":"+=28px"},"fast");
+});
+$("#movedownleft").click(function(){
+$("#redball").animate({"top":"+=28px","left":"-=28px"},"fast");
+});
+$("#movediagnolleft").click(function(){
+$("#redball").animate({"top":"-=28px","left":"-=28px"},"fast");
+});
+$("#movedownright").click(function(){
+$("#redball").animate({"top":"+=28px","left":"+=28px"},"fast");
+});
+$("#movediagnolright").click(function(){
+$("#redball").animate({"top":"-=28px","left":"+=28px"},"fast");
+});
+$("#movesquare").click(function(){
+$("#redball").animate({"left":"-=160px"},"fast");
+$("#redball").animate({"top":"+=160px"},"fast");
+$("#redball").animate({"left":"+=160px"},"fast");
+$("#redball").animate({"top":"-=160px"},"fast");
+$("#redball").animate({"left":"-=160px"},"fast");
+});
+</script>
+</body>
+</html>

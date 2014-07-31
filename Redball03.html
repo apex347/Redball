@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>
+  <title> Red Ball Zero One</title>
+  <style>
+#tab{
+  border: 2px solid black;
+  position: absolute;
+  top: 300px;
+  Left: 200px;
+}
+#tab2{
+border: 2px solid black;
+position:top-right;
+top: 300px;
+Left: 200px;
+}
+
+tr td {
+  border:1px solid black;
+}
+ </style>
+  <script>
+      function sayhello()
+      {
+    alert("Welcome Mr.Wayne");
+      }
+      function moveright()
+      {
+        redball.left=redball.left+50;
+      }
+      function moveleft() 
+      {
+        redball.left=redball.left-50;
+      }
+       function moveup()
+      {
+        redball.top=redball.top-50;
+      }
+      function movedown() 
+      {
+        redball.top=redball.top+50;
+      }
+      function movediagnolright()
+      {
+        redball.top=redball.top-30;
+        redball.left=redball.left+30;
+      }
+       function movediagnolleft()
+      {
+        redball.top=redball.top-30; 
+        redball.left=redball.left-30;
+      }
+      function movedownleft()
+      {
+        redball.top=redball.top+30;
+        redball.left=redball.left-30;
+      }
+      function movedownright()
+      {
+        redball.top=redball.top+30;
+        redball.left=redball.left+30;
+      }
+      function movesquare()
+      {
+
+
+        for (i = 0; i < 8; i++) {
+         redball.left=redball.left+25;
+        }
+        for (i = 0; i < 8; i++) {
+         redball.top=redball.top+25;
+        }
+        for (i = 0; i < 8; i++) {
+         redball.left=redball.left-25;
+        }
+        for (i = 0; i < 8; i++) {
+         redball.top=redball.top-25;
+        }
+      }
+      function movetriangle()
+      {
+      for (i = 0; i < 8; i++) {
+         movediagnolright();
+        }
+      for (i = 0; i < 8; i++) {
+         redball.top=redball.top+25; 
+        }
+        for (i = 0; i < 4; i++) {
+         redball.top=redball.top+50; 
+        }
+        for (i = 0; i < 8; i++) {
+         movediagnolleft(); 
+        }
+      }
+      function rageagainstwall()
+      {
+        for (i = 0; i < 26; i++) {
+         moveright(); 
+        }
+        for (i = 0; i < 15; i++) {
+         movedownleft(); 
+        } 
+        for (i = 0; i < 20; i++) {
+         movediagnolleft(); 
+        }     
+        for (i = 0; i < 4; i++) {
+         movedownleft(); 
+        }
+     }
+     function Octagon()
+     {
+     for (i = 0; i < 4; i++) {
+         movediagnolright(); 
+        }
+     for (i = 0; i < 4; i++) {
+         moveright(); 
+        }   
+     for (i = 0; i < 4; i++) {
+         movedownright(); 
+        } 
+      for (i = 0; i < 4; i++) {
+         movedown(); 
+        }
+      for (i = 0; i < 4; i++) {
+         movedownleft(); 
+        }
+      for (i = 0; i < 4; i++) {
+         moveleft(); 
+        }
+      for (i = 0; i < 4; i++) {
+         movediagnolleft(); 
+        }
+      for (i = 0; i < 4; i++) {
+         moveup(); 
+        }
+      for (i = 0; i < 4; i++) {
+         movediagnolright(); 
+        }
+      }
+      function X()
+      {
+      for (i = 0; i < 4; i++) {
+         movediagnolright(); 
+        }
+      for (i = 0; i < 8; i++) {
+         movedownleft(); 
+        }
+      for (i = 0; i < 4; i++) {
+         movediagnolright(); 
+        }
+      for (i = 0; i < 4; i++) {
+         movediagnolleft(); 
+        }
+      for (i = 0; i < 8; i++) {
+         movedownright(); 
+        }
+      for (i = 0; i < 4; i++) {
+         movediagnolleft(); 
+        }
+      }
+  </script>
+  <script src="http://lrn.icstars.org/redball.js"></script>
+</head>
+<body>
+<table id="tab">
+<tr>
+<td><button onclick="sayhello();">Shawn's Button</button></td>
+<td><button onclick="moveright();">Move Right</button></td>
+<td><button onclick="moveleft();">Move Left</button></td>
+</tr>
+<tr>
+ <td><button onclick="movedown();">Move Down</button></td>
+<td><button onclick="moveup();">Move Up</button></td>
+<td><button onclick="movediagnolleft();">Move Diagnol R</button></td>
+</tr>
+<table id="tab2">
+<tr>
+<td><button onclick="movediagnolright();">Move Diagnol L</button></td>
+<td><button onclick="movedownright();">Down Diagnol Left</button></td>
+<td><button onclick="movedownleft();">Down Diagnol Right</button></td>
+</tr>
+<tr>
+<td><button onclick="movesquare();">Move Square</button></td>
+<td><button onclick="movetriangle();">Move Triangle</button></td>
+<td><button onclick="rageagainstwall()">Rage Against</button></td>
+<td><button onclick="Octagon();">Octagon</button></td> 
+<td><button onclick="X();">X</button></td>
+</tr>
+<img style="position: absolute; left: 140px; top: 100px;" id="redball" src="redball.jpg">
+</body>

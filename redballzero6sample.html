@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script>   
+var hello;  // hello is now a global variable
+hello = new mygame; // hello is now an instance of mygame 'mygame:controller of the whole universe: Brahma'
+    
+function sayhello(){ //Now the function (hello) logs "hello"
+    console.log("hello")
+}
+
+function mygame(){  //sayhello is the function mygame
+     this.sayhello = function (){
+         console.log("hello")
+     };
+    this.addball = function (){
+        var game = $("#game");
+        game.append("<img id='redball'           src='http://www.icstars.org/files/redball.jpg'/>");
+        var redball=new ball();
+        redball.cssid="redball";
+        redball.imgsrc="http://www.icstars.org/files/redball.jpg";
+        redball.debug();
+    };// closes the add ball function        
+}//end of mygame class definition 
+
+
+function ball(){
+    var cssid;
+    var imgsrc;
+    this.debug = function (){
+        console.log('this is my id: '+this.cssid);
+        console.log('my image source is:'+this.imgsrc);
+        
+
+
+    };//closing of debug function
+}// end of ball class definition 
+    
+</script>
+    <title></title>
+</head>
+
+<body>
+<div id="game">  </div>
+<button onclick="hello.sayhello();">Say Hello</button>
+<button onclick="hello.addball();">Add</button>
+</body>
+</html>
